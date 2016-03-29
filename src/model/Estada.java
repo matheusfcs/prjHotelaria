@@ -68,8 +68,9 @@ public class Estada {
 		}
 	}
 	
-	public static void removerEstada(Date checkIn, Date CheckOut){
-		
+	public static void removerEstada(Date checkIn, Date checkOut){
+		checkIn = null;
+		checkOut = null;
 	}
 	
 }
