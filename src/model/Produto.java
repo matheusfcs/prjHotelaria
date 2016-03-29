@@ -72,6 +72,14 @@ public class Produto {
 		}
 	}
 	
+	public static void adicionarProduto(String nome, float valor, int qtde){
+		nome  = "Coca Lata";
+		valor = (float) 6.50;
+		qtde  = 2;
+	}
 	
+	public static void removerProduto(String nome, float valor, int qtde){
+		
+	}
 	
 }

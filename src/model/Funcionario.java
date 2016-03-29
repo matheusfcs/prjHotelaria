@@ -5,10 +5,16 @@ public class Funcionario {
 	private int ctps;
 	private String telefone;
 	
+	//constants
+	public final static ErroDominio NOME_INVALIDO = new ErroDominio("Funcionario", 1, "Nome não pode ser vazio ou nulo");
+	public final static ErroDominio CTPS_INVALIDO = new ErroDominio("Funcionario", 2, "CPTS não pode ser vazio ou negativo");
+	public final static ErroDominio TELEFONE_INVALIDO = new ErroDominio("Funcionario", 3, "Telefone não pode ser vazio ou negativo");
+	
 	@Override
 	public String toString() {
 		return "Funcionario [nome=" + nome + ", ctps=" + ctps + ", telefone=" + telefone + "]";
 	}
+	
 	//geters and seters
 	public String getNome() {
 		return nome;
@@ -46,7 +52,22 @@ public class Funcionario {
 		this.telefone = telefone;
 	}
 	
+	//methods
+	public static void validarNome(String nome) throws DominioException{
+		if(nome == null || nome.length() == 0){
+			throw new DominioException(NOME_INVALIDO);
+		}
+	}
 	
+	public static void validarCtps(int ctps) throws DominioException{
+		if(ctps == 0 || ctps < 0){
+			throw new DominioException(CTPS_INVALIDO);
+		}
+	}
 	
-	
+	public static void validarTelefone(int telefone) throws DominioException{
+		if(telefone == 0 || telefone < 0){
+			throw new DominioException(TELEFONE_INVALIDO);
+		}
+	}
 }
