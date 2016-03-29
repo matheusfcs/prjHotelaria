@@ -79,7 +79,9 @@ public class Produto {
 	}
 	
 	public static void removerProduto(String nome, float valor, int qtde){
-		
+		nome = null;
+		valor = (Float) null;
+		qtde = 0;
 	}
 	
 }
