@@ -1,5 +1,8 @@
 package model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Acomodacao {
 	
 	private int numero;
@@ -77,5 +80,18 @@ public class Acomodacao {
 			}
 		}
 	
+		public String status(){
+			Estada estada = new Estada();
+			Date data = new Date();
+			SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
+			String dataFormatada  = formataData.format(data);
+			String status;
+			if(estada.getCheckOut().equals(data)){
+				status = "Liberada";
+			}else{
+				status = "Ocupada";
+			}
+			return status;
+		}
 	
 }
